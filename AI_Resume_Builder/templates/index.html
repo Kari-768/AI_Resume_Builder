@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume Builder</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #ffffff);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 35px 45px;
+            border-radius: 14px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            max-width: 520px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0d47a1;
+            font-weight: 700;
+        }
+
+        label {
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        textarea {
+            min-height: 120px;
+        }
+
+        input[type="submit"] {
+            margin-top: 22px;
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(13, 71, 161, 0.3);
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>✨ AI Resume Builder</h2>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            
+            <label for="resume">Upload Resume (PDF / DOCX / TXT)</label>
+            <input type="file" name="resume" accept=".pdf,.docx,.txt" required>
+
+            <label for="job_description">Job Description</label>
+            <textarea name="job_description" placeholder="Paste the job description here..." required></textarea>
+
+            <input type="submit" value="Generate Resume">
+        </form>
+
+        <div class="note">
+            Your resume is processed locally using a free AI model.
+        </div>
+    </div>
+
+</body>
+</html>
